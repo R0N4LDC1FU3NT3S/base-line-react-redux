@@ -1,32 +1,22 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "../Layouts/Home"
 import Page1 from "../Layouts/Page1"
 import Page2 from "../Layouts/Page2"
 import Page3 from "../Layouts/Page3"
 import Page4 from "../Layouts/Page4"
 
-const Routes = () => {
+const PathRoutes = () => {
 	return (
-		<Router>
-			<Switch>
-				<Route exact path="/page4">
-					<Page4 />
-				</Route>
-				<Route exact path="/page3">
-					<Page3 />
-				</Route>
-				<Route exact path="/page2">
-					<Page2 />
-				</Route>
-				<Route exact path="/page1">
-					<Page1 />
-				</Route>
-				<Route exact path="/">
-					<Home />
-				</Route>
-			</Switch>
-		</Router>
+		<BrowserRouter>
+			<Routes>
+				<Route exact path="/page4" element={<Page4 />} />
+				<Route exact path="/page3" element={<Page3 />} />
+				<Route exact path="/page2" element={<Page2 />} />
+				<Route exact path="/page1" element={<Page1 />} />
+				<Route exact path="/" element={<Home />} />
+			</Routes>
+		</BrowserRouter>
 	)
 }
 
-export default Routes
+export default PathRoutes
